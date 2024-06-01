@@ -13,7 +13,6 @@ namespace _Scripts.Infrastructure.EntryPoints
         private IGameService _gameService;
         private IUpdateService _updateService;
 
-
         private void Awake()
         {
             Installer.InstallBinding();

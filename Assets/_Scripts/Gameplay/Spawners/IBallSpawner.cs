@@ -2,7 +2,7 @@ using _Scripts.Infrastructure.Singleton;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace _Scripts.Infrastructure.Game.Spawners
+namespace _Scripts.Gameplay.Spawners
 {
     public interface IBallSpawner : IService
     {

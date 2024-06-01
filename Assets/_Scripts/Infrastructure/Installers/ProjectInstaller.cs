@@ -1,7 +1,8 @@
 ﻿using _Scripts.Data.Balls;
 using _Scripts.Infrastructure.Providers;
+using _Scripts.Infrastructure.Providers.Assets;
+using _Scripts.Infrastructure.Providers.Data;
 using _Scripts.Infrastructure.Services.Game;
-using _Scripts.Infrastructure.Services.Providers.Assets;
 using _Scripts.Infrastructure.Services.Update;
 using _Scripts.Infrastructure.Singleton;
 using UnityEngine;

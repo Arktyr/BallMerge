@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace _Scripts.Infrastructure.Services.Providers.Assets
+namespace _Scripts.Infrastructure.Providers.Assets
 {
     public class AssetProvider : IAssetProvider
     {

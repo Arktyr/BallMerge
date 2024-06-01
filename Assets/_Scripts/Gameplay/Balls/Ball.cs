@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Scripts.Infrastructure.Game.Balls
+namespace _Scripts.Gameplay.Balls
 {
     public class Ball : MonoBehaviour
     {

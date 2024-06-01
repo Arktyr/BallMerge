@@ -1,7 +1,8 @@
 ﻿using _Scripts.Gameplay.Pool;
-using _Scripts.Infrastructure.Game.Spawners;
+using _Scripts.Gameplay.Spawners;
 using _Scripts.Infrastructure.Providers;
-using _Scripts.Infrastructure.Services.Providers.Assets;
+using _Scripts.Infrastructure.Providers.Assets;
+using _Scripts.Infrastructure.Providers.Data;
 using _Scripts.Infrastructure.Singleton;
 
 namespace _Scripts.Infrastructure.Installers

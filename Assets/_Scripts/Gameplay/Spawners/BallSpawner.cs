@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Data.Balls;
+using _Scripts.Gameplay.Balls;
 using _Scripts.Gameplay.Pool;
-using _Scripts.Infrastructure.Game.Balls;
-using _Scripts.Infrastructure.Providers;
-using _Scripts.Infrastructure.Services.Providers.Assets;
+using _Scripts.Infrastructure.Providers.Assets;
+using _Scripts.Infrastructure.Providers.Data;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace _Scripts.Infrastructure.Game.Spawners
+namespace _Scripts.Gameplay.Spawners
 {
     public class BallSpawner : IBallSpawner
     {
