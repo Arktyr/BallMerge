@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Infrastructure.Installers
+namespace _Scripts.Infrastructure.Installers
 {
     public abstract class Installer : MonoBehaviour
     {

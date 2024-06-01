@@ -1,6 +1,6 @@
-using Infrastructure.Singleton;
+using _Scripts.Infrastructure.Singleton;
 
-namespace Infrastructure.Services.Update
+namespace _Scripts.Infrastructure.Services.Update
 {
     public interface IUpdateService : IService
     {

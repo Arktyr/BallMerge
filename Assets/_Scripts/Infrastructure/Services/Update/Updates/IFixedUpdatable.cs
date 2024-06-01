@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Services.Update.Updates
+﻿namespace _Scripts.Infrastructure.Services.Update.Updates
 {
     public interface IFixedUpdatable
     {

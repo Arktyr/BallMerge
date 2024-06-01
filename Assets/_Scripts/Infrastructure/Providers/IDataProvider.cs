@@ -1,6 +1,6 @@
-using Infrastructure.Singleton;
+using _Scripts.Infrastructure.Singleton;
 
-namespace Infrastructure.Providers
+namespace _Scripts.Infrastructure.Providers
 {
     public interface IDataProvider : IService
     {

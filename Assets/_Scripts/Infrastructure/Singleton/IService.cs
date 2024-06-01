@@ -1,4 +1,4 @@
-namespace Infrastructure.Singleton
+namespace _Scripts.Infrastructure.Singleton
 {
     public interface IService
     {

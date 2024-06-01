@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Infrastructure.Services.Update.Updates;
+using _Scripts.Infrastructure.Services.Update.Updates;
 using UnityEngine;
 
-namespace Infrastructure.Services.Update
+namespace _Scripts.Infrastructure.Services.Update
 {
     public class UpdateService : MonoBehaviour, IUpdateService
     {
@@ -43,7 +43,7 @@ namespace Infrastructure.Services.Update
         {
             if (IsStopped)
                 return;
-
+            
             foreach (var update in _updatables) 
                 update?.OnUpdate();
         }

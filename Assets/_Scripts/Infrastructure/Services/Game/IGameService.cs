@@ -1,6 +1,6 @@
-﻿using Infrastructure.Singleton;
+﻿using _Scripts.Infrastructure.Singleton;
 
-namespace Infrastructure.Game
+namespace _Scripts.Infrastructure.Services.Game
 {
     public interface IGameService : IService
     {

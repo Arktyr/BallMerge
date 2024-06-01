@@ -1,10 +1,10 @@
-﻿using Infrastructure.Game;
-using Infrastructure.Installers;
-using Infrastructure.Services.Update;
-using Infrastructure.Singleton;
+﻿using _Scripts.Infrastructure.Installers;
+using _Scripts.Infrastructure.Services.Game;
+using _Scripts.Infrastructure.Services.Update;
+using _Scripts.Infrastructure.Singleton;
 using UnityEngine;
 
-namespace Infrastructure.EntryPoints
+namespace _Scripts.Infrastructure.EntryPoints
 {
     public class GameEntryPoint : MonoBehaviour
     {

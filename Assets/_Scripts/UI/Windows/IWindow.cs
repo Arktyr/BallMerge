@@ -1,4 +1,4 @@
-﻿using Infrastructure.Singleton;
+﻿using _Scripts.Infrastructure.Singleton;
 
 namespace _Scripts.UI.Windows
 {

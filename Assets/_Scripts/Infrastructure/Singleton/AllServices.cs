@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Singleton
+namespace _Scripts.Infrastructure.Singleton
 {
     public class AllServices : IDisposable
     {

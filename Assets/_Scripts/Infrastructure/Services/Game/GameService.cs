@@ -1,7 +1,7 @@
-﻿using Infrastructure.Services.Update;
+﻿using _Scripts.Infrastructure.Services.Update;
 using UnityEngine;
 
-namespace Infrastructure.Game
+namespace _Scripts.Infrastructure.Services.Game
 {
     public class GameService : IGameService
     {
