@@ -2,6 +2,6 @@
 {
     public static class AssetsPath
     {
-        public static readonly string BALL_PATH = @"Assets/Resources/Prefabs/Ball.prefab";
+        public static readonly string BALL_PATH = @"Prefabs/Ball";
     }
 }

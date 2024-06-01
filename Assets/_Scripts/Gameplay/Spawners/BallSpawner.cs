@@ -33,7 +33,7 @@ namespace _Scripts.Gameplay.Spawners
             _ballCachedPrefab = await _assetProvider.Get<Ball>(AssetsPath.BALL_PATH);
         }
         
-        public void SpawnBall(Vector3 position, Quaternion rotation)
+        public Ball SpawnBall(Vector3 position, Quaternion rotation)
         {
             BallConfig ballConfig = GetRandomBallConfig();
 
@@ -42,6 +42,7 @@ namespace _Scripts.Gameplay.Spawners
             ball.gameObject.SetActive(true);
 
             ball.OnDestroyed += ReturnToPool;
+            return ball;
         }
 
         private void ReturnToPool(Ball ball)

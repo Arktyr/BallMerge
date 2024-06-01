@@ -1,5 +1,6 @@
 ﻿using _Scripts.Gameplay.Pool;
 using _Scripts.Gameplay.Spawners;
+using _Scripts.Gameplay.Spawners.Warmup;
 using _Scripts.Infrastructure.Providers;
 using _Scripts.Infrastructure.Providers.Assets;
 using _Scripts.Infrastructure.Providers.Data;
@@ -23,6 +24,10 @@ namespace _Scripts.Infrastructure.Installers
             IBallSpawner ballSpawner =
                 AllServices.Container
                     .RegisterSingle<IBallSpawner>(new BallSpawner(assetProvider, dataProvider, objectPool));
+
+
+            IWarmupService warmupService =
+                AllServices.Container.RegisterSingle<IWarmupService>(new WarmupService(ballSpawner));
         }
     }
 }
