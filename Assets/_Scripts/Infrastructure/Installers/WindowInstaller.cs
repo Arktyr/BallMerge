@@ -19,7 +19,8 @@ namespace _Scripts.Infrastructure.Installers
 
         private void BindWindows()
         {
-            IWindowService windowService = AllServices.Container.GetSingle<IWindowService>();
+            IWindowService windowService = 
+                AllServices.Container.RegisterSingle<IWindowService>(new WindowService());
             
             windowService.AddWindow(_mainMenuWindow);
             windowService.AddWindow(_endGameWindow);

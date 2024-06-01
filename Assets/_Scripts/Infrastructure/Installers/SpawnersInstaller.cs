@@ -29,8 +29,7 @@ namespace _Scripts.Infrastructure.Installers
             IParticleSpawner particleSpawner =
                 AllServices.Container
                     .RegisterSingle<IParticleSpawner>(new ParticleSpawner(objectPool, assetProvider));
-
-
+            
             IWarmupService warmupService =
                 AllServices.Container
                     .RegisterSingle<IWarmupService>(new WarmupService(ballSpawner, particleSpawner));
