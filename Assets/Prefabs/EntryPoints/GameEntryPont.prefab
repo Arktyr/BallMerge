@@ -56,20 +56,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4572805898454504947, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
       propertyPath: Installers.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572805898454504947, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
       propertyPath: Injectables.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4572805898454504947, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
-      propertyPath: Installers.Array.data[1]
+      propertyPath: Installers.Array.data[0]
       value: 
       objectReference: {fileID: 5939359361640495175}
     - target: {fileID: 4572805898454504947, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
-      propertyPath: Installers.Array.data[2]
+      propertyPath: Installers.Array.data[1]
       value: 
       objectReference: {fileID: 6046079549603491239}
+    - target: {fileID: 4572805898454504947, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
+      propertyPath: Installers.Array.data[2]
+      value: 
+      objectReference: {fileID: 3006245025979481180}
     - target: {fileID: 4572805898454504947, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
       propertyPath: Installers.Array.data[3]
       value: 
@@ -118,7 +122,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 141209789627193315, guid: 256ef3af33db60a43a0c68608009d525, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
