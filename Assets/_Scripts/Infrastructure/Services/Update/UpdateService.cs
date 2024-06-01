@@ -43,9 +43,9 @@ namespace _Scripts.Infrastructure.Services.Update
         {
             if (IsStopped)
                 return;
-            
-            foreach (var update in _updatables) 
-                update?.OnUpdate();
+
+            for (int i = 0; i < _updatables.Count; i++) 
+                _updatables[i]?.OnUpdate();
         }
 
         private void FixedUpdate()
@@ -53,8 +53,8 @@ namespace _Scripts.Infrastructure.Services.Update
             if (IsStopped)
                 return;
 
-            foreach (var update in _fixedUpdatables)
-                update?.FixedUpdate();
+            for (int i = 0; i < _fixedUpdatables.Count; i++) 
+                _fixedUpdatables[i]?.OnFixedUpdate();
         }
 
         private void LateUpdate()
@@ -62,8 +62,8 @@ namespace _Scripts.Infrastructure.Services.Update
             if (IsStopped)
                 return;
             
-            foreach (var update in _lateUpdatables) 
-                update?.LateUpdatable();
+            for (int i = 0; i < _lateUpdatables.Count; i++) 
+                _lateUpdatables[i]?.OnLateUpdatable();
         }
 
         public void RemoveUpdatable<TUpdate>(TUpdate update)

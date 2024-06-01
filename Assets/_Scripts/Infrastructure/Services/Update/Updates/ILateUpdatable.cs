@@ -2,6 +2,6 @@
 {
     public interface ILateUpdatable
     {
-        public void LateUpdatable();
+        public void OnLateUpdatable();
     }
 }

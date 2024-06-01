@@ -2,6 +2,6 @@
 {
     public interface IFixedUpdatable
     {
-        public void FixedUpdate();
+        public void OnFixedUpdate();
     }
 }
