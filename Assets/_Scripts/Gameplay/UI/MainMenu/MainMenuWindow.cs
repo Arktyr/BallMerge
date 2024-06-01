@@ -1,10 +1,8 @@
-﻿using _Scripts.Infrastructure.Installers;
-using _Scripts.Infrastructure.Installers.Base;
+﻿using _Scripts.Infrastructure.Installers.Base;
 using _Scripts.Infrastructure.Services.Game;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.UI.Windows;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 namespace _Scripts.Gameplay.UI.MainMenu

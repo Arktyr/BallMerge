@@ -1,9 +1,7 @@
-﻿using _Scripts.Infrastructure.Installers;
-using _Scripts.Infrastructure.Installers.Base;
+﻿using _Scripts.Infrastructure.Installers.Base;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Infrastructure.EntryPoints
 {

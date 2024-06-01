@@ -1,9 +1,7 @@
-﻿using _Scripts.Gameplay.Pendulums;
-using _Scripts.Gameplay.Services.Merge;
+﻿using _Scripts.Gameplay.Services.Merge;
 using _Scripts.Gameplay.Services.Score;
 using _Scripts.Gameplay.UI.EndGameMenu;
 using _Scripts.Infrastructure.Input;
-using _Scripts.Infrastructure.Installers;
 using _Scripts.Infrastructure.Installers.Base;
 using _Scripts.Infrastructure.Services.Update;
 using _Scripts.Infrastructure.Singleton;
