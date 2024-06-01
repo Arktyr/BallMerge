@@ -12,12 +12,14 @@ namespace _Scripts.Gameplay.Merge
             
         public List<MergeCell> MergeCells;
 
+        public event Action OnEndEmptyCells;
+        
         public void Initialize()
         {
             _ballTrigger.OnBallLanded += SetInEmptyCell;
         }
 
-        private async void SetInEmptyCell(Ball ball)
+        private void SetInEmptyCell(Ball ball)
         {
             foreach (var cell in MergeCells)
             {
@@ -25,6 +27,10 @@ namespace _Scripts.Gameplay.Merge
                     continue;
                 
                 cell.SetBall(ball);
+                
+                if (IsHaveEmptyCells() == false)
+                    OnEndEmptyCells?.Invoke();
+
                 return;
             }
             
@@ -48,6 +54,17 @@ namespace _Scripts.Gameplay.Merge
             foreach (var ball in cachedBalls) 
                 SetInEmptyCell(ball);
 
+        }
+
+        public bool IsHaveEmptyCells()
+        {
+            foreach (var cell in MergeCells)
+            {
+                if (cell.IsEmpty)
+                    return true;
+            }
+
+            return false;
         }
         
         public void Clear()

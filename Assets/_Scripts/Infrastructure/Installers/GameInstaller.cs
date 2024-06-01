@@ -1,6 +1,8 @@
 ﻿using _Scripts.Gameplay.Pool;
 using _Scripts.Gameplay.Services;
 using _Scripts.Gameplay.Services.Merge;
+using _Scripts.Gameplay.Services.Score;
+using _Scripts.Infrastructure.Services.Game;
 using _Scripts.Infrastructure.Singleton;
 using UnityEngine;
 
@@ -10,6 +12,7 @@ namespace _Scripts.Infrastructure.Installers
     {
         [SerializeField] private PendulumService _pendulumService;
         [SerializeField] private MergeService _mergeService;
+        [SerializeField] private GameService _gameService;
         
         public override void InstallBinding()
         {
@@ -26,6 +29,12 @@ namespace _Scripts.Infrastructure.Installers
 
             IMergeService mergeService =
                 AllServices.Container.RegisterSingle<IMergeService>(_mergeService);
+
+            IScoreService scoreService =
+                AllServices.Container.RegisterSingle<IScoreService>(new ScoreService());
+            
+            IGameService gameService =
+                AllServices.Container.RegisterSingle<IGameService>(_gameService);
         }
     }
 }

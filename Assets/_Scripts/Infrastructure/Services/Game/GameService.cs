@@ -1,8 +1,12 @@
 ﻿using _Scripts.Gameplay.Pendulums;
+using _Scripts.Gameplay.Services.Merge;
+using _Scripts.Gameplay.Services.Score;
+using _Scripts.Gameplay.UI.EndGameMenu;
 using _Scripts.Infrastructure.Input;
 using _Scripts.Infrastructure.Installers;
 using _Scripts.Infrastructure.Services.Update;
 using _Scripts.Infrastructure.Singleton;
+using _Scripts.UI.Windows;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.Services.Game
@@ -11,17 +15,28 @@ namespace _Scripts.Infrastructure.Services.Game
     {
         private IUpdateService _updatableService;
         private IInputService _inputService;
-
+        private IWindowService _windowService;
+        private IMergeService _mergeService;
+        private IScoreService _scoreService;
+        
         public override void Inject()
         {
             _updatableService = AllServices.Container.GetSingle<IUpdateService>();
             _inputService = AllServices.Container.GetSingle<IInputService>();
+            _windowService = AllServices.Container.GetSingle<IWindowService>();
+            _mergeService = AllServices.Container.GetSingle<IMergeService>();
+            _scoreService = AllServices.Container.GetSingle<IScoreService>();
         }
 
         public void StartGame()
         {
+            _mergeService.ClearCells();
+            _scoreService.ResetScore();
+            
             _inputService.Enable();
             _updatableService.Enable();
+            
+            _windowService.Close();
             Debug.LogError("Start Game");
         }
 
@@ -38,11 +53,12 @@ namespace _Scripts.Infrastructure.Services.Game
             _updatableService.Disable();
             Debug.LogError("Stop Game");
         }
-
+        
         public void EndGame()
         {
             _inputService.Disable();
             _updatableService.Disable();
+            _windowService.Open<EndGameWindow>();
             Debug.LogError("End Game");
         }
 
