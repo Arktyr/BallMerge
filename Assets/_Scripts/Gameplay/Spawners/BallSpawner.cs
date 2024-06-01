@@ -57,6 +57,5 @@ namespace _Scripts.Gameplay.Spawners
 
             return _ballConfigs[randomNumber];
         }
-
     }
 }

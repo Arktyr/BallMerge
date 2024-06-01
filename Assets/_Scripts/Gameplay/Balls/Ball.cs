@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace _Scripts.Gameplay.Balls
@@ -8,16 +9,21 @@ namespace _Scripts.Gameplay.Balls
         [SerializeField] private SpriteRenderer _sprite;
         [SerializeField] private Rigidbody2D _rigidbody;
 
-        private float _points;
+        public float Points { get; private set; }
 
+        public Color CurrentColor { get; private set;}
+
+        public bool IsOnGround => _rigidbody.velocity.magnitude < 0.1f;
+        
         public event Action<Ball> OnDestroyed;
-        public event Action<Ball> OnLanded; 
 
         public void Construct(Color color,
             float points)
         {
             _sprite.color = color;
-            _points = points;
+            Points = points;
+
+            CurrentColor = color;
         }
 
         public void Release()
@@ -25,9 +31,6 @@ namespace _Scripts.Gameplay.Balls
             _rigidbody.simulated = true;
         }
 
-
-        public void Land() => 
-            OnLanded?.Invoke(this);
 
         public void Destroy()
         {

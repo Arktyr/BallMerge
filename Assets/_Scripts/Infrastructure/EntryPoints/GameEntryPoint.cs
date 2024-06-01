@@ -1,4 +1,5 @@
 ﻿using _Scripts.Gameplay.Services;
+using _Scripts.Gameplay.Services.Merge;
 using _Scripts.Gameplay.Spawners;
 using _Scripts.Gameplay.Spawners.Warmup;
 using _Scripts.Infrastructure.Input;
@@ -20,6 +21,7 @@ namespace _Scripts.Infrastructure.EntryPoints
         private IInputService _inputService;
         
         private IPendulumService _pendulumService;
+        private IMergeService _mergeService;
         
         private void Awake()
         {
@@ -29,6 +31,7 @@ namespace _Scripts.Infrastructure.EntryPoints
             _updateService = AllServices.Container.GetSingle<IUpdateService>();
             _warmupService = AllServices.Container.GetSingle<IWarmupService>();
             _inputService = AllServices.Container.GetSingle<IInputService>();
+            _mergeService = AllServices.Container.GetSingle<IMergeService>();
 
             _pendulumService = AllServices.Container.GetSingle<IPendulumService>();
         }
@@ -40,6 +43,7 @@ namespace _Scripts.Infrastructure.EntryPoints
             _updateService.AddUpdatable(_inputService);
             
             _pendulumService.StartSpawnBall();
+            _mergeService.Initialize();
             
             _gameService.StartGame();
         }

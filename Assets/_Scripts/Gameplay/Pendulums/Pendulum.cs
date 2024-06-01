@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Scripts.Gameplay.Animations.Pendulum;
 using _Scripts.Gameplay.Balls;
 using _Scripts.Gameplay.Spawners;
@@ -13,7 +14,9 @@ namespace _Scripts.Gameplay.Pendulums
     {
         [SerializeField] private Transform _rootToSpawnBall;
         [SerializeField] private PendulumAnimation _pendulumAnimation;
-        
+
+        [SerializeField] private List<BallTrigger> _ballTriggers;
+
         private IBallSpawner _ballSpawner;
         private IInputService _inputService;
         
@@ -30,6 +33,9 @@ namespace _Scripts.Gameplay.Pendulums
             _pendulumAnimation.StartAnimation();
             
             _inputService.OnMouseClick += ReleaseBall;
+
+            foreach (var ballTrigger in _ballTriggers) 
+                ballTrigger.OnBallLanded += OnBallLanded;
         }
 
         public void SpawnBall()
@@ -38,8 +44,6 @@ namespace _Scripts.Gameplay.Pendulums
             ball.transform.SetParent(_rootToSpawnBall);
             
             _currentBall = ball;
-            
-            _currentBall.OnLanded += OnBallLanded;
         }
 
         public void StopSpawnBall()
@@ -47,29 +51,31 @@ namespace _Scripts.Gameplay.Pendulums
             _pendulumAnimation.StopAnimation();
             
             _inputService.OnMouseClick -= ReleaseBall;
-
-            if (_currentBall != null)
-                _currentBall.OnLanded -= OnBallLanded;
             
             _currentBall = null;
         }
 
         private void OnBallLanded(Ball ball)
         {
-            _currentBall.OnLanded -= OnBallLanded;
+            _currentBall = null;
             SpawnBall();
         }
 
         private void ReleaseBall(Vector3 position)
         {
-            Debug.Log("33");
-            
             if (_currentBall == null)
                 return;
             
             _currentBall.transform.SetParent(null);
             _currentBall.Release();
-            _currentBall = null;
+        }
+
+        private void OnDestroy()
+        {
+            _inputService.OnMouseClick -= ReleaseBall;
+
+            foreach (var ballTrigger in _ballTriggers) 
+                ballTrigger.OnBallLanded -= OnBallLanded;
         }
     }
 }
