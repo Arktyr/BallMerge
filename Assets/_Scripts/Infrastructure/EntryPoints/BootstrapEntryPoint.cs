@@ -1,4 +1,5 @@
 ﻿using _Scripts.Infrastructure.Installers;
+using _Scripts.Infrastructure.Installers.Base;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;

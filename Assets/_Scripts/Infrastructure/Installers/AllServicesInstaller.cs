@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using _Scripts.Gameplay.Pendulums;
+using _Scripts.Infrastructure.Installers.Base;
 
 namespace _Scripts.Infrastructure.Installers
 {

@@ -4,6 +4,7 @@ using _Scripts.Gameplay.Merge;
 using _Scripts.Gameplay.Services.Score;
 using _Scripts.Gameplay.Spawners.FX;
 using _Scripts.Infrastructure.Installers;
+using _Scripts.Infrastructure.Installers.Base;
 using _Scripts.Infrastructure.Services.Game;
 using _Scripts.Infrastructure.Singleton;
 using UnityEngine;

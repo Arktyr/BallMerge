@@ -1,11 +1,10 @@
-﻿using _Scripts.Gameplay.Pendulums;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _Scripts.Gameplay.Services
+namespace _Scripts.Gameplay.Services.Pendulum
 {
     public class PendulumService : MonoBehaviour, IPendulumService
     {
-        [SerializeField] private Pendulum _pendulum;
+        [SerializeField] private Pendulums.Pendulum _pendulum;
         
         public void StartSpawnBall()
         {

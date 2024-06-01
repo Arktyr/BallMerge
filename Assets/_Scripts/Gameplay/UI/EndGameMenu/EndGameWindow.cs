@@ -1,6 +1,7 @@
 ﻿using _Scripts.Gameplay.Services.Score;
 using _Scripts.Gameplay.UI.MainMenu;
 using _Scripts.Infrastructure.Installers;
+using _Scripts.Infrastructure.Installers.Base;
 using _Scripts.Infrastructure.Services.Game;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.UI.Windows;

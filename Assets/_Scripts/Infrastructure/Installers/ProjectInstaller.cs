@@ -1,5 +1,6 @@
 ﻿using _Scripts.Data.Balls;
 using _Scripts.Infrastructure.Input;
+using _Scripts.Infrastructure.Installers.Base;
 using _Scripts.Infrastructure.Providers.Assets;
 using _Scripts.Infrastructure.Providers.Data;
 using _Scripts.Infrastructure.Services.Update;

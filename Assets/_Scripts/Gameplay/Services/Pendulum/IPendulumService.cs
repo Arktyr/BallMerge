@@ -1,6 +1,6 @@
 using _Scripts.Infrastructure.Singleton;
 
-namespace _Scripts.Gameplay.Services
+namespace _Scripts.Gameplay.Services.Pendulum
 {
     public interface IPendulumService : IService
     {

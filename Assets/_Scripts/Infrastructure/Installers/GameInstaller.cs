@@ -1,7 +1,9 @@
 ﻿using _Scripts.Gameplay.Pool;
 using _Scripts.Gameplay.Services;
 using _Scripts.Gameplay.Services.Merge;
+using _Scripts.Gameplay.Services.Pendulum;
 using _Scripts.Gameplay.Services.Score;
+using _Scripts.Infrastructure.Installers.Base;
 using _Scripts.Infrastructure.Services.Game;
 using _Scripts.Infrastructure.Singleton;
 using UnityEngine;
