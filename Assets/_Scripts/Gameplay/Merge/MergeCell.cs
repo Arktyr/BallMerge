@@ -23,8 +23,6 @@ namespace _Scripts.Gameplay.Merge
 
         public void Clear(bool isDestroyBall)
         {
-            Debug.Log(CurrentBall);
-            
             if (CurrentBall == null)
                 return;
             

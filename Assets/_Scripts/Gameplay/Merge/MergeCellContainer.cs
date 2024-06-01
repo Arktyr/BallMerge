@@ -9,6 +9,7 @@ namespace _Scripts.Gameplay.Merge
         public List<MergeCell> MergeCombination;
 
         public event Action<float> OnCombinationSolved;
+        public event Action<MergeCellContainer> OnBallsDestroyed;
         
         public void Initialize()
         {
@@ -50,6 +51,8 @@ namespace _Scripts.Gameplay.Merge
 
         public void ClearCells()
         {
+            OnBallsDestroyed?.Invoke(this);
+            
             foreach (var cell in MergeCombination) 
                 cell.Clear(true);
         }

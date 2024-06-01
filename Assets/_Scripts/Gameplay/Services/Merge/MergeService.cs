@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Scripts.Gameplay.Merge;
 using _Scripts.Gameplay.Services.Score;
+using _Scripts.Gameplay.Spawners.FX;
 using _Scripts.Infrastructure.Installers;
 using _Scripts.Infrastructure.Services.Game;
 using _Scripts.Infrastructure.Singleton;
@@ -15,11 +16,13 @@ namespace _Scripts.Gameplay.Services.Merge
         [SerializeField] private List<MergeCellColumn> _mergeCellColumns;
 
         private IScoreService _scoreService;
+        private IParticleSpawner _particleSpawner;
         private IGameService _gameService;
 
         public override void Inject()
         {
             _scoreService = AllServices.Container.GetSingle<IScoreService>();
+            _particleSpawner = AllServices.Container.GetSingle<IParticleSpawner>();
             _gameService = AllServices.Container.GetSingle<IGameService>();
         }
 
@@ -28,6 +31,7 @@ namespace _Scripts.Gameplay.Services.Merge
             foreach (var cellContainer in _mergeCellContainers)
             {
                 cellContainer.OnCombinationSolved += AddPoints;
+                cellContainer.OnBallsDestroyed += SpawnFX;
                 cellContainer.Initialize();
             }
 
@@ -43,6 +47,16 @@ namespace _Scripts.Gameplay.Services.Merge
             _scoreService.AddScore(value);
             
             SortCells();
+        }
+
+        private void SpawnFX(MergeCellContainer mergeCellContainer)
+        {
+            foreach (var mergeCell in mergeCellContainer.MergeCombination)
+            {
+                Vector3 ballPosition = mergeCell.CurrentBall.transform.position;
+                
+                _particleSpawner.SpawnParticle(ballPosition);
+            }
         }
 
         private void SortCells()
@@ -70,8 +84,12 @@ namespace _Scripts.Gameplay.Services.Merge
 
         private void OnDestroy()
         {
-            foreach (var cellContainer in _mergeCellContainers) 
+            foreach (var cellContainer in _mergeCellContainers)
+            {
                 cellContainer.OnCombinationSolved -= AddPoints;
+                cellContainer.OnBallsDestroyed -= SpawnFX;
+
+            }
             
             foreach (var cellColumn in _mergeCellColumns) 
                 cellColumn.OnEndEmptyCells -= CheckEmptyCells;

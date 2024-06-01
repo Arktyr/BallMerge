@@ -58,28 +58,11 @@ namespace _Scripts.Infrastructure.Services.Game
         {
             _inputService.Disable();
             _updatableService.Disable();
-            _windowService.Open<EndGameWindow>();
             Debug.LogError("End Game");
+            _windowService.Open<EndGameWindow>();
         }
 
         private void OnApplicationQuit() => 
             EndGame();
-
-        private void OnApplicationPause(bool pauseStatus)
-        {
-            if (_inputService == null)
-                return;
-            
-            if (_updatableService == null)
-                return;
-            
-            if (pauseStatus)
-            {
-                StopGame();
-                return;
-            }
-            
-            ResumeGame();
-        }
     }
 }

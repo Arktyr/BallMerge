@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Infrastructure.EntryPoints
 {
@@ -9,16 +10,18 @@ namespace _Scripts.Infrastructure.EntryPoints
     {
         private const string SCENENAME = "Game";
         
-        [SerializeField] private Installer installer;
-
+        [SerializeField] private Installer _installer;
+        [SerializeField] private int _applicationFps;
         
         private void Awake()
         {
-            installer.InstallBinding();
+            _installer.InstallBinding();
         }
 
         private async void Start()
         {
+            Application.targetFrameRate = _applicationFps;
+            
             await SceneManager.LoadSceneAsync(SCENENAME, LoadSceneMode.Single);
         }
     }
