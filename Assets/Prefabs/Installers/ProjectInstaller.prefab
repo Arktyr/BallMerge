@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _updateService: {fileID: 436642450269309669}
+  _ballData: {fileID: 11400000, guid: e6d356f960a668748b7934a4c4275fa2, type: 2}
 --- !u!114 &2248159479294254269
 MonoBehaviour:
   m_ObjectHideFlags: 0

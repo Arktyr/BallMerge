@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4572805898454504947}
   - component: {fileID: 141209789627193315}
   m_Layer: 0
-  m_Name: GameInstaller
+  m_Name: AllServicesInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
